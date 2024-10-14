@@ -1,0 +1,37 @@
+//write a java program to create a two thread and make them sychronise
+import java.util.Scanner;
+public class synTwoThread{
+	public static void main(String args[]){
+		thread1 th1 = new thread1();
+		thread2 th2 = new thread2();
+		th1.start();
+		th2.start();
+		System.out.println("main thread");
+	}
+}
+class thread1 extends Thread{
+	Scanner scanner = new Scanner(System.in);
+	public void run(){
+		int i;
+	System.out.println("enter the number:");
+	int val = scanner.nextInt();
+	for(i=1;i<=val;i++){
+		System.out.println("S_"+i);
+	}
+	System.out.println("Exit from thread1");
+	}
+	
+}
+class thread2 extends Thread{
+	Scanner scanner1 = new Scanner(System.in);
+	public void run(){int i;
+	System.out.println("enter the number:");
+	int val = scanner1.nextInt();
+	for(i=1;i<=val;i++){
+		System.out.println("G_"+i);
+	}
+	System.out.println("Exit from thread2");
+	}
+	
+}
+	
