@@ -1,0 +1,30 @@
+//write a java program to implement custom exception
+class InsBalException extends Exception
+{
+	public InsBalException(String message){
+		super(message);
+	}
+}
+public class bankaccount{
+	private double balance;
+	public bankaccount(double balance){
+		this.balance = balance;
+	}
+	public void withdraw(double amount) throws InsBalException{
+		if(amount>balance){
+		throw new InsBalException("insufficient balance in account");
+		}
+		balance-=amount;
+		System.out.println("withdraw successful. \nRemaining balance:"+balance);
+	}
+	public static void main(String args[]){
+		bankaccount account = new bankaccount(1000.0);
+		try{
+			account.withdraw(500);
+			account.withdraw(600);
+		}
+		catch(InsBalException e){
+			System.out.println("Error:"+ e.getMessage());
+		}
+	}
+}
