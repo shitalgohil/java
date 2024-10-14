@@ -1,0 +1,20 @@
+//write a java program to set thread name and priority
+public class setgetThread{
+	public static void main(String args[]){
+		Thread mythread = new Thread(new Mythread());
+		mythread.setName("Mythread");
+		mythread.setPriority(Thread.MAX_PRIORITY);
+		mythread.start();
+		
+		//main thread
+		System.out.println("Main thread name:"+Thread.currentThread().getName());
+		System.out.println("Main thread priority:"+Thread.currentThread().getPriority());
+	}
+}
+class Mythread extends Thread{
+	@Override
+	public void run(){
+		System.out.println("Thread is running with name:"+Thread.currentThread().getName());
+		System.out.println("Thread priority:"+Thread.currentThread().getPriority());
+	}
+}
