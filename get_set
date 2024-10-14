@@ -1,0 +1,26 @@
+ class employee{
+    private int id;
+    private String name;
+
+    public void setid(int i){
+        this.id= i;
+    }
+    public int getid(){
+        return id;
+    }
+    public void setname(String n){
+        this.name = n;
+    }
+    public String getname(){
+        return name;
+    }
+}
+public class get_set{
+    public static void main(String args[]){
+        employee info = new employee();
+        info.setid(123);
+        System.out.println("id is"+ info.getid());
+        info.setname("shital");
+        System.out.println("name is:"+info.getname());
+    }
+}
