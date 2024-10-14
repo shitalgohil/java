@@ -1,0 +1,16 @@
+class outerclass{
+	interface nestedinterface{
+		void display();
+	}
+}
+class innerclass implements outerclass.nestedinterface{
+	public void display(){
+		System.out.println("hello! from nestedinterface");
+	}
+}
+public class nestedinterfaceEx{
+	public static void main(String args[]){
+		innerclass inner = new innerclass();
+		inner.display();
+	}
+}
